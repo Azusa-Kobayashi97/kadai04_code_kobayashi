@@ -20,8 +20,10 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 4.4% 0 4.4%;
+    position: absolute;
+    width: 100%;
 }
-.header__nav ul{
+.header_nav ul{
     display: flex;
     gap: 48px;
 }
@@ -34,7 +36,7 @@ header{
     display: block;
 }
 
-.header__nav_a{
+.header_nav a {
     color: #fff;
     font-family: "Alatsi", sans-serif;
     font-size: 16px;
@@ -66,6 +68,16 @@ header{
     text-align: center;
 }
 
+.heading-title{
+    font-family: "Diplomata SC", serif;
+    font-size: 40px;
+    color: #D20202;
+}
+
+.section {
+    margin-bottom: 144px;
+}
+
 .catch_subtitle {
     font-family: "Alatsi", sans-serif;
     font-size: 26px;
@@ -75,14 +87,14 @@ header{
 }
 
 .catch_title {
-    font-size: 40px;
+    font-size: 64px;
     line-height: 1.5;
     letter-spacing: 0;
     margin-bottom: 32px;
 }
 
 .catch_text {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.8;
 }
 
@@ -141,30 +153,38 @@ h6 {
 #about {
     display: flex;
     gap: 40px;
-    align-items: center;
+    align-items: start;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 144px;
     padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
 }
 
+#about .heading-title{
+    text-align: left;
+}
+
 .about_img {
     width: 44%;
-    border-radius: 0 0 64px 0; /*右下を丸く*/
     display: block;
+}
+
+.about_img img{
+    border-radius: 0 0 64px 0; /*右下を丸く*/
 }
 
 .about_body {
     width: 56%;
 }
 
-.heading-subtitle {
+/*.heading-subtitle {
     font-family: "Alatsi", sans-serif;
     font-size: 24px;
     color: #888;
     margin-bottom: 16px;
 }
+    */
 
 .about_title {
     font-size: 32px;
@@ -183,7 +203,7 @@ h6 {
     display: flex;
     flex-direction: column;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 144px;
     padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
@@ -215,7 +235,8 @@ h6 {
     font-size: 24px;
     color: #D20202;
     margin-bottom: 12px;
-    text-align: center;
+    text-align: left;
+    margin-top: -27px;
 }
 
 .menu_item p{
@@ -255,7 +276,7 @@ h6 {
 
 .event {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 144px;
     padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
@@ -290,14 +311,23 @@ h6 {
 }
 
 .event_item dt {
-    font-weight: bold;
+    font-weight: 500;/*mediumの太さに変更*/
     white-space: nowrap;
 }
 
+.event_item dd{
+    margin-left: 0;
+}
+
+.event_item{
+    margin-bottom: 16px;
+}
+.event_item :last-child{
+    margin-bottom: 0;
+}
+
 .access {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin: 0;
     width: 100%;
     box-sizing: border-box;
 }
@@ -321,20 +351,21 @@ footer {
     flex-direction: column;
     gap: 80px;
     background-color: #fff;
-    padding: 80px 15% 60px 15%;
+    padding: 80px 0 60px 0;
     box-sizing: border-box;
-    margin-top: 144px;
 }
 
 .footer_container {
+    max-width: 1000px;
+    margin: 0 auto;
+    /*内部コンテンツに幅を持たせて、背景色はそのままにするため*/
     display: flex;
-    flex-direction: column;
     gap: 40px;
     position: relative;
 }
 
 .footer_logo {
-    width: 250px;
+    width: 380px;
 }
 
 .footer_logo img {
@@ -344,10 +375,15 @@ footer {
 
 .footer_info {
     display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+.footer_item{
+    display: flex;
     gap: 40px;
 }
 
-dl {
+/*dl {
     display: grid;
     grid-template-columns: 80px 1fr;
     column-gap: 20px;
@@ -356,21 +392,23 @@ dl {
     line-height: 1.5;
     letter-spacing: 0;
     margin: 0;
-}
+} */
 
-.footer_item {
-    display: contents;
-}
+/*
+.footer_item { 
+   display: contents;
+}*/
 
 .footer_item dt {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    width: 64px;
 }
 
 .page-top {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 140px;
 }
 
 .page-top img {
